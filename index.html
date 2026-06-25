@@ -10,8 +10,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .cascade { position:fixed; top:0; bottom:0; width:calc((100vw - var(--maxw))/2 - 18px); overflow:hidden; z-index:3; pointer-events:none; opacity:.5;
+      -webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent); mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent); }
+    .cascade.left { left:0; } .cascade.right { right:0; }
+    .cascade .col { display:flex; flex-direction:column; gap:14px; padding:10px; animation:cascadeUp 55s linear infinite; }
+    .cascade.right .col { animation-direction:reverse; }
+    .cascade img { width:100%; border-radius:16px; display:block; box-shadow:0 12px 30px -20px rgba(80,55,60,.5); }
+    @keyframes cascadeUp { from{transform:translateY(0)} to{transform:translateY(-50%)} }
+    @media (max-width:1360px){ .cascade { display:none; } }
+    @media (prefers-reduced-motion: reduce){ .cascade .col { animation:none; } }
+  </style>
 </head>
 <body>
+  <div class="cascade left" aria-hidden="true"><div class="col" id="casc-left"></div></div>
+  <div class="cascade right" aria-hidden="true"><div class="col" id="casc-right"></div></div>
   <nav class="nav">
     <a class="brand-mark" href="index.html">
       <svg class="gem" viewBox="0 0 32 32" aria-hidden="true"><polygon points="16,2 28,12 16,30 4,12" fill="currentColor"/><polygon points="16,2 22,12 16,30 10,12" fill="#fff" opacity="0.28"/></svg>
@@ -169,6 +182,11 @@
         g.insertAdjacentHTML("beforeend",
           '<a href="'+p.href+'" target="_blank" rel="noopener"><img src="'+p.img+'" alt="'+p.title+'" loading="lazy" referrerpolicy="no-referrer"></a>');
       });
+      const jw = window.GGJ_PRODUCTS.filter((p) => p.cat === "Jewelry");
+      const mk = (p) => '<img src="'+p.img+'" alt="" loading="lazy" referrerpolicy="no-referrer">';
+      const cl = document.getElementById("casc-left"), cr = document.getElementById("casc-right");
+      if (cl) { const a = jw.slice(0,5); cl.innerHTML = a.map(mk).join("") + a.map(mk).join(""); }
+      if (cr) { const b = jw.slice(5,10); cr.innerHTML = b.map(mk).join("") + b.map(mk).join(""); }
     })();
     document.getElementById("yr").textContent = new Date().getFullYear();
   </script>
