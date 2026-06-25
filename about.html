@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Goblin Girl Jewels</title>
+  <meta name="description" content="Goblin Girl Jewels is the soldered crystal craft of flow artist and fire dancer Larissa Alboucrek. Made with love and intention." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,2 28,12 16,30 4,12' fill='%23BE6238'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand-mark" href="index.html">
+      <svg class="gem" viewBox="0 0 32 32" aria-hidden="true"><polygon points="16,2 28,12 16,30 4,12" fill="currentColor"/><polygon points="16,2 22,12 16,30 10,12" fill="#fff" opacity="0.28"/></svg>
+      Goblin Girl <span class="boho" style="font-size:1.1em">Jewels</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="live.html">Live</a>
+      <a href="about.html">About</a>
+      <a href="brand-book.html">Brand Book</a>
+      <a class="btn btn-primary" href="shop.html" style="padding:10px 22px">Shop</a>
+    </div>
+  </nav>
+
+  <section class="wrap" style="padding-top:64px">
+    <div class="sec-head reveal" style="max-width:760px">
+      <p class="eyebrow">The Maker</p>
+      <h1 style="font-size:clamp(2.4rem,6vw,4rem)">Hands that spin fire, <span class="boho aura-text" style="font-size:1.05em">solder crystals.</span></h1>
+    </div>
+    <div class="card reveal" style="max-width:800px">
+      <p style="color:var(--ink);font-size:1.12rem">Goblin Girl Jewels is the craft of <strong>Larissa Alboucrek</strong> — a flow artist and fire dancer who turns sustainably harvested earth materials into wearable magick.</p>
+      <p style="margin-top:16px">The same warm, wide-open festival energy that moves a hoop of flame goes into every piece: raw stones gathered with reverence, then hand-soldered and wire-wrapped one at a time. Nothing is mass-made. Every talisman is set with love and intention, built for spiritual and earthside protection — meant to be danced in, lived in, and grown old with.</p>
+      <p style="margin-top:16px">No two pieces are alike, because no two stones — or the people who wear them — ever are.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">What goes in</p><h2>Materials &amp; <span class="boho aura-text" style="font-size:1.05em">method</span></h2><hr class="rule" /></div>
+    <div class="grid features">
+      <div class="card feature reveal"><h3>Sustainably harvested</h3><p>Crystals and stones sourced with respect for the land — small-batch, never strip-mined bulk.</p></div>
+      <div class="card feature reveal"><h3>Soldered &amp; wrapped</h3><p>Hand-soldered bezels, wire wraps, and electroformed copper — old-craft techniques, one piece at a time.</p></div>
+      <div class="card feature reveal"><h3>Intentioned</h3><p>Each talisman is cleansed and set with intention before it leaves the studio.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="care">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+      <div class="card reveal">
+        <p class="eyebrow">Crystal care</p>
+        <h3 style="margin:10px 0">Keep your magick charged</h3>
+        <p>Keep pieces dry and off in the shower or ocean. Cleanse stones under moonlight or with sage / palo santo. Copper will patina beautifully over time — polish gently with a soft cloth to brighten.</p>
+      </div>
+      <div class="card reveal" id="shipping">
+        <p class="eyebrow">Shipping</p>
+        <h3 style="margin:10px 0">From her hands to yours</h3>
+        <p>Pieces ship within a few days of your order, wrapped with care. Buy securely here, or browse current stock on Depop. Custom commissions ship after you co-create your piece.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="capture reveal">
+      <p class="eyebrow">Stay close</p>
+      <h2>Join the <span class="boho aura-text" style="font-size:1.05em">coven</span></h2>
+      <p class="muted" style="max-width:480px;margin:14px auto 0">Drops, live streams, and the occasional moon ritual — straight to your inbox.</p>
+      <form data-capture>
+        <input type="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button class="btn btn-primary" type="submit">Count me in ✦</button>
+      </form>
+      <p data-capture-note class="muted" style="margin-top:16px;font-size:.85rem"></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap copyright">© <span id="yr"></span> Goblin Girl Jewels · Larissa Alboucrek · Soldered Magick ✦ · <a href="index.html" style="color:var(--accent)">Home</a></div>
+  </footer>
+
+  <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

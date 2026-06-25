@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop · Goblin Girl Jewels</title>
+  <meta name="description" content="Shop one-of-one soldered crystal talismans. Secure checkout via Stripe." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,2 28,12 16,30 4,12' fill='%23BE6238'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand-mark" href="index.html">
+      <svg class="gem" viewBox="0 0 32 32" aria-hidden="true"><polygon points="16,2 28,12 16,30 4,12" fill="currentColor"/><polygon points="16,2 22,12 16,30 10,12" fill="#fff" opacity="0.28"/></svg>
+      Goblin Girl <span class="boho" style="font-size:1.1em">Jewels</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="live.html">Live</a>
+      <a href="about.html">About</a>
+      <a href="brand-book.html">Brand Book</a>
+      <a class="btn btn-primary" href="https://depop.app.link/4Kox3uRZ62b" target="_blank" rel="noopener" style="padding:10px 22px">Depop</a>
+    </div>
+  </nav>
+
+  <section class="wrap" style="padding-top:64px">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Shop</p>
+      <h1 style="font-size:clamp(2.4rem,6vw,4rem)">One-of-one <span class="boho aura-text" style="font-size:1.05em">talismans</span></h1>
+      <hr class="rule" />
+      <p class="muted">Every piece is hand-soldered, sustainably sourced, and singular. Secure checkout below — or find her on Depop.</p>
+    </div>
+
+    <h2 style="margin-bottom:8px">Talismans</h2><hr class="rule" />
+    <div class="grid products" id="shop-jewelry"></div>
+
+    <h2 style="margin:80px 0 8px">Threads</h2><hr class="rule" />
+    <p class="muted" style="margin-bottom:30px">Curated vintage &amp; festival wear, hand-picked from her closet.</p>
+    <div class="grid products" id="shop-clothing"></div>
+
+    <div class="capture reveal" style="margin-top:72px">
+      <p class="eyebrow">Custom commissions</p>
+      <h2>Want a piece made <span class="boho aura-text" style="font-size:1.05em">for you?</span></h2>
+      <p class="muted" style="max-width:520px;margin:14px auto 0">Tell her your stone, your intention, and your chain — she'll solder a talisman to your spirit. Leave your email and she'll reach out.</p>
+      <form data-capture>
+        <input type="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button class="btn btn-primary" type="submit">Start a commission ✦</button>
+      </form>
+      <p data-capture-note class="muted" style="margin-top:16px;font-size:.85rem"></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap copyright">© <span id="yr"></span> Goblin Girl Jewels · Soldered Magick ✦ · <a href="index.html" style="color:var(--accent)">Home</a></div>
+  </footer>
+
+  <script src="assets/js/products.js"></script>
+  <script>
+    (function () {
+      const j = document.getElementById("shop-jewelry");
+      const c = document.getElementById("shop-clothing");
+      window.GGJ_PRODUCTS.forEach((p) => {
+        const tgt = p.cat === "Clothing" ? c : j;
+        tgt.insertAdjacentHTML("beforeend", window.GGJ_card(p));
+      });
+    })();
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+  <script src="assets/js/main.js"></script>
+</
