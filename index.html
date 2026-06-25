@@ -20,6 +20,17 @@
     @keyframes cascadeUp { from{transform:translateY(0)} to{transform:translateY(-50%)} }
     @media (max-width:1360px){ .cascade { display:none; } }
     @media (prefers-reduced-motion: reduce){ .cascade .col { animation:none; } }
+
+    /* Mobile cascading: horizontal photo ribbon (shows when side columns hide) */
+    .ribbon { display:none; }
+    @media (max-width:1360px){
+      .ribbon { display:block; overflow:hidden; padding:16px 0;
+        -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+      .ribbon .track { display:flex; gap:12px; width:max-content; animation:ribbon 45s linear infinite; }
+      .ribbon img { height:130px; width:auto; border-radius:14px; box-shadow:0 10px 26px -18px rgba(80,55,60,.5); }
+    }
+    @keyframes ribbon { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    @media (prefers-reduced-motion: reduce){ .ribbon .track { animation:none; } }
   </style>
 </head>
 <body>
@@ -55,6 +66,8 @@
       </div>
     </div>
   </header>
+
+  <div class="ribbon" aria-hidden="true"><div class="track" id="ribbon-track"></div></div>
 
   <section class="wrap">
     <div class="grid features">
@@ -187,6 +200,8 @@
       const cl = document.getElementById("casc-left"), cr = document.getElementById("casc-right");
       if (cl) { const a = jw.slice(0,5); cl.innerHTML = a.map(mk).join("") + a.map(mk).join(""); }
       if (cr) { const b = jw.slice(5,10); cr.innerHTML = b.map(mk).join("") + b.map(mk).join(""); }
+      const rb = document.getElementById("ribbon-track");
+      if (rb) { const s = jw.slice(0,8); rb.innerHTML = s.map(mk).join("") + s.map(mk).join(""); }
     })();
     document.getElementById("yr").textContent = new Date().getFullYear();
   </script>
